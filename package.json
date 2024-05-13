@@ -1,0 +1,53 @@
+{
+  "name": "star-rail-vue",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "author": "blacktunes",
+  "description": "崩坏:星穹铁道Vue组件库和相关工具",
+  "homepage": "https://github.com/blacktunes/star-rail-utils",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "dev": "vite --port 8080 --host",
+    "build": "run-p type-check \"build-only {@}\" --",
+    "preview": "vite preview",
+    "build-only": "vite build",
+    "type-check": "vue-tsc --build --force",
+    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
+    "format": "prettier --write src/"
+  },
+  "dependencies": {
+    "html-to-image": "^1.11.11",
+    "super-image-cropper": "^1.0.18",
+    "vue": "^3.4.21",
+    "vue-dompurify-html": "^5.0.1",
+    "vue-picture-cropper": "^0.7.0"
+  },
+  "devDependencies": {
+    "@rushstack/eslint-patch": "^1.10.0",
+    "@tsconfig/node18": "^18.2.4",
+    "@types/node": "^18.19.26",
+    "@vitejs/plugin-vue": "^5.0.4",
+    "@vitejs/plugin-vue-jsx": "^3.1.0",
+    "@vue/eslint-config-prettier": "^9.0.0",
+    "@vue/eslint-config-typescript": "^13.0.0",
+    "@vue/tsconfig": "^0.5.1",
+    "eslint": "^8.57.0",
+    "eslint-plugin-vue": "^9.24.0",
+    "npm-run-all2": "^6.1.2",
+    "prettier": "^3.2.5",
+    "prettier-plugin-stylus-format": "^1.0.0",
+    "stylus": "^0.63.0",
+    "typescript": "~5.4.3",
+    "unplugin-auto-import": "^0.17.5",
+    "vite": "^5.2.6",
+    "vite-plugin-banner": "^0.7.1",
+    "vite-plugin-dts": "^3.9.1",
+    "vite-plugin-lib-inject-css": "^2.0.1",
+    "vue-tsc": "^2.0.7"
+  }
+}
