@@ -34,7 +34,6 @@ export const screenshot = async (
         win.document.body.style.alignItems = 'center'
         win.document.title = title
         win.document.body.appendChild(img)
-        return Promise.reject(new Error('无法打开窗口'))
       } else {
         return Promise.reject(new Error('无法打开窗口'))
       }

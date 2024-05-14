@@ -67,7 +67,7 @@ importers:
         specifier: ^0.63.0
         version: 0.63.0
       typescript:
-        specifier: ^5.4.3
+        specifier: ~5.4.3
         version: 5.4.3
       unplugin-auto-import:
         specifier: ^0.17.5
