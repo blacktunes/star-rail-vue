@@ -28,13 +28,13 @@
         <template v-else>
           <Btn
             name="取消"
-            type="check"
+            type="wrong"
             @click="close"
           />
 
           <Btn
             name="确认"
-            type="wrong"
+            type="check"
             @click="onConfirml"
           />
         </template>

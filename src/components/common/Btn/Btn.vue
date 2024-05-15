@@ -12,7 +12,7 @@
         v-if="$slots.icon"
       ></slot>
       <svg
-        v-else-if="type === 'wrong'"
+        v-else-if="type === 'check'"
         viewBox="0 0 1024 1024"
         version="1.1"
         xmlns="http://www.w3.org/2000/svg"
@@ -25,7 +25,7 @@
         ></path>
       </svg>
       <svg
-        v-else-if="type === 'check'"
+        v-else-if="type === 'wrong'"
         viewBox="0 0 1024 1024"
         version="1.1"
         xmlns="http://www.w3.org/2000/svg"
