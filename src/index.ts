@@ -2,6 +2,7 @@ import Btn from './components/Btn.vue'
 import Close from './components/Close.vue'
 import Popup from './components/Popup.vue'
 import Window from './components/Window/Window.vue'
+export * from './components/common/IconBtn'
 
 export * from './components/Confirm'
 export * from './components/Cropper'
