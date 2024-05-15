@@ -10,6 +10,7 @@ export * from './components/Main'
 export * from './components/Select'
 
 export { Btn, Close, Popup, Window }
+export * from './components/popup/Loading'
 
 export * from './utils/analytics'
 export * from './utils/images'
