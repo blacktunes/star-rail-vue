@@ -66,7 +66,7 @@
 </template>
 
 <script lang="ts" setup>
-import Close from '../Close.vue'
+import { Close } from '@/index'
 
 withDefaults(
   defineProps<{

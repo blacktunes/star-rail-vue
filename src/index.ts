@@ -1,17 +1,15 @@
-import Btn from './components/Btn.vue'
-import Close from './components/Close.vue'
-import Popup from './components/Popup.vue'
-import Window from './components/Window/Window.vue'
+export * from './components/common/Btn'
+export * from './components/common/Close'
 export * from './components/common/IconBtn'
+export * from './components/common/Main'
+export * from './components/common/Popup'
+export * from './components/common/Window'
 
-export * from './components/Confirm'
-export * from './components/Cropper'
-export * from './components/Input'
-export * from './components/Main'
-export * from './components/Select'
-
-export { Btn, Close, Popup, Window }
+export * from './components/popup/Confirm'
+export * from './components/popup/Cropper'
+export * from './components/popup/Input'
 export * from './components/popup/Loading'
+export * from './components/popup/Select'
 
 export * from './utils/analytics'
 export * from './utils/images'

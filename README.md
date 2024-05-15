@@ -8,12 +8,15 @@
 - **Window** 窗口模板
 - **Close**
 - **Btn**
+- **IconBtn**
 
 #### 弹出层组件
 
 > [!WARNING]
 > 弹出层组件需要配合`PopupManager`使用
 
+- **Loading**
+  - `loading`
 - **Confirm**
   - `confirm` 
   - `useConfirm`
