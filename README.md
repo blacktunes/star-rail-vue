@@ -17,6 +17,9 @@
 
 - **Loading**
   - `loading`
+- **Log**
+  - `log`
+  - `setLog` 
 - **Confirm**
   - `confirm` 
   - `useConfirm`
