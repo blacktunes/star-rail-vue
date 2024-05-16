@@ -20,7 +20,7 @@
 </template>
 
 <script lang="ts" setup>
-import { Popup } from '@/index'
+import Popup from '@/components/common/Popup/Popup.vue'
 
 const props = defineProps<{
   name: string

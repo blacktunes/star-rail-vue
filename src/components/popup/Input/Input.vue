@@ -53,7 +53,9 @@
 </template>
 
 <script lang="ts" setup>
-import { Btn, Popup, Window } from '@/index'
+import Btn from '@/components/common/Btn/Btn.vue'
+import Popup from '@/components/common/Popup/Popup.vue'
+import Window from '@/components/common/Window/Window.vue'
 import { callback, data } from './data'
 
 const inputDom = ref<HTMLInputElement | null>(null)
