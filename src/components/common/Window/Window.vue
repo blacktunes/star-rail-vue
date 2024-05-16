@@ -1,68 +1,63 @@
 <template>
-  <Transition
-    name="window"
-    appear
+  <div
+    v-if="show"
+    class="window"
   >
     <div
-      v-if="show"
-      class="window"
+      class="box"
+      :style="{
+        width,
+        height,
+        minWidth,
+        minHeight
+      }"
+      @click.stop
     >
       <div
-        class="box"
-        :style="{
-          width,
-          height,
-          minWidth,
-          minHeight
-        }"
-        @click.stop
+        class="outside"
+        v-if="slot.outside"
       >
+        <slot name="outside"></slot>
+      </div>
+      <div class="wrapper">
         <div
-          class="outside"
-          v-if="slot.outside"
+          class="left"
+          v-if="slot.left"
         >
-          <slot name="outside"></slot>
+          <slot name="left"></slot>
         </div>
-        <div class="wrapper">
+        <div class="right">
           <div
-            class="left"
-            v-if="slot.left"
+            class="title"
+            :style="{ justifyContent: confirm ? 'center' : undefined }"
           >
-            <slot name="left"></slot>
-          </div>
-          <div class="right">
-            <div
-              class="title"
-              :style="{ justifyContent: confirm ? 'center' : undefined }"
-            >
-              <span>
-                {{ title }}
-              </span>
+            <span>
+              {{ title }}
+            </span>
 
-              <Close
-                v-if="!!onClose && !confirm"
-                class="close"
-                @click="close"
-              />
-            </div>
-            <div class="content">
-              <slot></slot>
-            </div>
-            <slot name="bottom"></slot>
+            <Close
+              v-if="!!onClose && !confirm"
+              class="close"
+              @click="close"
+            />
           </div>
+          <div class="content">
+            <slot></slot>
+          </div>
+          <slot name="bottom"></slot>
         </div>
-        <div
-          class="footer"
-          v-if="slot.footer"
-        >
-          <div class="bg"></div>
-          <div class="btn-list">
-            <slot name="footer"></slot>
-          </div>
+      </div>
+      <div
+        class="footer"
+        v-if="slot.footer"
+      >
+        <div class="bg"></div>
+        <div class="btn-list">
+          <slot name="footer"></slot>
         </div>
       </div>
     </div>
-  </Transition>
+  </div>
 </template>
 
 <script lang="ts" setup>
@@ -223,56 +218,4 @@ message()
         display flex
         justify-content center
         align-content center
-
-.window-enter-active
-  transition all 0.3s
-
-.window-leave-active
-  transition all 0.25s
-
-.window-enter-from
-.window-leave-to
-  opacity 0
-
-.window-enter-active .box
-.window-leave-active .box
-  transition all 0.2s ease-out
-
-.window-enter-from .box
-.window-leave-to .box
-  transform translateY(10%)
-
-.window-enter-active .bg
-.window-leave-active .bg
-  transition all 0.25s
-  transition-delay 0.05s
-  transform-origin bottom
-
-.window-enter-from .bg
-  opacity 0
-  transform scaleY(0)
-
-.window-leave-to .bg
-  opacity 0
-  transform scaleY(0) translateY(30%)
-
-.window-enter-active .btn-list
-  transition all 0.35s
-  transition-delay 0.15s
-
-.window-enter-from .btn-list
-  opacity 0
-
-.window-leave-active .btn-list
-  transition all 0.2s
-
-.window-leave-to .btn-list
-  opacity 0
-
-@keyframes backdrop-filter
-  from
-    backdrop-filter blur(0px)
-
-  to
-    backdrop-filter blur(10px)
 </style>
