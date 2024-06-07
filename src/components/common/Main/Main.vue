@@ -34,11 +34,11 @@ import type { PopupManager } from '@/utils/popup'
 import { setViewport } from './viewport'
 
 const props = defineProps<{
-  viewport: { width: number; height?: number; bottom?: number }
+  viewport?: { width?: number; height?: number; bottom?: number }
   popup?: PopupManager<any, any, any, any>
 }>()
 
-const size = setViewport(props.viewport)
+const size = setViewport(props.viewport || {})
 
 provide(
   'scale',

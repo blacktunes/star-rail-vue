@@ -8,8 +8,10 @@ interface Viewport {
 
 let viewportData: Viewport
 
-export const setViewport = (size: { width: number; height?: number; bottom?: number }) => {
+export const setViewport = (size: { width?: number; height?: number; bottom?: number }) => {
   if (viewportData) return viewportData
+
+  if (size.width === undefined) size.width = 3200
 
   viewportData = reactive<Viewport>({
     width: size.width,
