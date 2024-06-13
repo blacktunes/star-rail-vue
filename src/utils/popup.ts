@@ -1,5 +1,7 @@
 import type { Component, ComputedRef } from 'vue'
 
+type Unpacked<T> = T extends Promise<infer U> ? U : T
+
 export class PopupManager<
   T extends Record<string, Component>,
   O extends Partial<Record<keyof T, (...args: any) => any>> = {},
