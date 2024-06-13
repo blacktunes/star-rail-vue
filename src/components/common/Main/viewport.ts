@@ -35,27 +35,9 @@ export const setViewport = (size: { width?: number; height?: number; bottom?: nu
 
   setSize()
 
-  document.addEventListener(
-    'focus',
-    function (event) {
-      const targetElement = event.target as HTMLElement
-      if (targetElement.tagName.toLowerCase() === 'input') {
-        isInputFocus = true
-      }
-    },
-    true
-  )
+  document.addEventListener('focus', () => (isInputFocus = true), true)
 
-  document.addEventListener(
-    'blur',
-    function (event) {
-      const targetElement = event.target as HTMLElement
-      if (targetElement.tagName.toLowerCase() === 'input') {
-        isInputFocus = false
-      }
-    },
-    true
-  )
+  document.addEventListener('blur', () => (isInputFocus = false), true)
 
   window.onresize = () => {
     if (!isInputFocus) {
