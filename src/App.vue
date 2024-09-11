@@ -7,6 +7,9 @@
     :popup="popupManager"
     @click="click"
   >
+    <div class="test">
+      测试文本测试文本测试文本测试文本测试文本测试文本测试文本测试文本测试文本测试文本测试文本测试文本测试文本测试文本测试文本测试文本测试文本测试文本测试文本测试文本
+    </div>
   </Main>
 </template>
 
@@ -34,4 +37,8 @@ body
     linear-gradient(336deg, rgba(0, 0, 255, 0.8), rgba(0, 0, 255, 0) 70.71%)
 </style>
 
-<style lang="stylus" scoped></style>
+<style lang="stylus" scoped>
+.test
+  font-size 200px
+  user-select none
+</style>

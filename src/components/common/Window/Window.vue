@@ -118,9 +118,7 @@ message()
   width 100%
   height 100%
   background rgba(0, 0, 0, 0.2)
-  animation backdrop-filter 0.9s
-  backdrop-filter blur(10px)
-  -webkit-backdrop-filter blur(10px)
+  animation backdrop-filter 1s ease-in forwards
 
   .box
     position relative
