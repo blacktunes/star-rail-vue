@@ -88,11 +88,4 @@ const props = withDefaults(
 
 .window-leave-to :deep(.btn-list)
   opacity 0
-
-@keyframes backdrop-filter
-  from
-    backdrop-filter blur(0px)
-
-  to
-    backdrop-filter blur(10px)
 </style>

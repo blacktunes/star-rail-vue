@@ -132,7 +132,7 @@ message()
     width -moz-fit-content
     height fit-content
     height -moz-fit-content
-    background var(--box-background-color)
+    background #d8d8d8
     message()
 
     .outside
@@ -197,7 +197,7 @@ message()
       justify-content center
       align-content center
       padding 30px 80px
-      background var(--box-background-color)
+      background #d8d8d8
 
       .bg
         position absolute
@@ -218,4 +218,11 @@ message()
         display flex
         justify-content center
         align-content center
+
+@keyframes backdrop-filter
+  from
+    backdrop-filter blur(0px)
+
+  to
+    backdrop-filter blur(10px)
 </style>
