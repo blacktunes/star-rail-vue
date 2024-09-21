@@ -1,4 +1,5 @@
 import { getFontEmbedCSS, toPng } from 'html-to-image'
+import type { Options } from 'html-to-image/lib/types'
 
 export const screenshot = async (
   dom: HTMLElement,
@@ -7,7 +8,8 @@ export const screenshot = async (
     width?: number
     height?: number
     download?: boolean
-  }
+  },
+  options: Options = {}
 ) => {
   try {
     const fontEmbedCSS = await getFontEmbedCSS(dom)
@@ -15,7 +17,9 @@ export const screenshot = async (
     const dataUrl = await toPng(dom, {
       width: config?.width,
       height: config?.height,
-      fontEmbedCSS
+      pixelRatio: 1,
+      fontEmbedCSS,
+      ...options
     })
     if (config?.download) {
       const link = document.createElement('a')
