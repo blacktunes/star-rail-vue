@@ -1,6 +1,6 @@
 {
   "name": "star-rail-vue",
-  "version": "1.2.6",
+  "version": "1.2.7",
   "type": "module",
   "main": "dist/index.js",
   "module": "dist/index.js",
@@ -22,6 +22,8 @@
   },
   "dependencies": {
     "html-to-image": "^1.11.11",
+    "jszip": "^3.10.1",
+    "lz-string": "^1.5.0",
     "super-image-cropper": "^1.0.18",
     "vue": "^3.4.27",
     "vue-dompurify-html": "^5.0.1",
