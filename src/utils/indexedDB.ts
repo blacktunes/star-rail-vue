@@ -143,6 +143,16 @@ export class IndexedDB {
       }
     })
   }
+  delete = (fn: () => void) => {
+    fn()
+    const request = indexedDB.deleteDatabase(this.name)
+    request.onblocked = () => {
+      location.reload()
+    }
+    request.onsuccess = () => {
+      location.reload()
+    }
+  }
 }
 
 export const createDatabase = (name: string, alias?: string) => {

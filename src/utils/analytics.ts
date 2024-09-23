@@ -1,9 +1,4 @@
-let flag = false
-
 export const analytics = (GA_ID: string, dev = true) => {
-  if (flag) return
-  flag = true
-
   if (!dev) {
     const analytics = document.createElement('script')
     analytics.async = true
