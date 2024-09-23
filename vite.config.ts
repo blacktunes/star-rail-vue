@@ -14,6 +14,9 @@ import pkg from './package.json'
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  define: {
+    BUILD_TIME: Date.now()
+  },
   plugins: [
     vue({
       script: {

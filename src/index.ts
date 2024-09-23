@@ -15,7 +15,10 @@ export * from './components/popup/Select'
 export * from './utils/analytics'
 export * from './utils/images'
 export * from './utils/indexedDB'
+export * from './utils/localStorage'
 export * from './utils/popup'
 export * from './utils/screenshot'
+
+window.BUILD_TIME = new Date(BUILD_TIME)
 
 export default {}
