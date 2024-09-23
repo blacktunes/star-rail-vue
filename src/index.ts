@@ -19,6 +19,4 @@ export * from './utils/localStorage'
 export * from './utils/popup'
 export * from './utils/screenshot'
 
-window.BUILD_TIME = new Date(BUILD_TIME)
-
 export default {}

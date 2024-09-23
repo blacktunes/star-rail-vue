@@ -14,9 +14,6 @@ import pkg from './package.json'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  define: {
-    BUILD_TIME: Date.now()
-  },
   plugins: [
     vue({
       script: {
@@ -28,7 +25,7 @@ export default defineConfig({
       imports: ['vue']
     }),
     banner(
-      `/**\n * name: ${pkg.name}\n * version: v${pkg.version}\n * description: ${pkg.description}\n * author: ${pkg.author}\n * homepage: ${pkg.homepage}\n */`
+      `/**\n * name: ${pkg.name}\n * version: v${pkg.version}\n * description: ${pkg.description}\n * author: ${pkg.author}\n * homepage: ${pkg.homepage}\n * build: ${new Date().toLocaleString()}\n */`
     ),
     dts({
       rollupTypes: true,
