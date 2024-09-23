@@ -7,7 +7,7 @@ export const buildTime = (key = 'BUILD_TIME'): Plugin => {
       return [
         {
           tag: 'script',
-          children: `window.${key}=${new Date()}`
+          children: `window.${key}=new Date(${Date.now()})`
         }
       ]
     }

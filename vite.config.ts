@@ -1,16 +1,16 @@
 import { fileURLToPath, URL } from 'node:url'
 
-import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx'
 import AutoImport from 'unplugin-auto-import/vite'
-import banner from 'vite-plugin-banner'
+import { defineConfig } from 'vite'
 import dts from 'vite-plugin-dts'
 import { libInjectCss } from 'vite-plugin-lib-inject-css'
+import banner from './build/banner'
 
 import { getFilesWithExtension } from './build/filePath'
 
-import pkg from './package.json'
+const outDir = 'dist/lib'
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -24,9 +24,7 @@ export default defineConfig({
     AutoImport({
       imports: ['vue']
     }),
-    banner(
-      `/**\n * name: ${pkg.name}\n * version: v${pkg.version}\n * description: ${pkg.description}\n * author: ${pkg.author}\n * homepage: ${pkg.homepage}\n * build: ${new Date().toLocaleString()}\n */`
-    ),
+    banner(outDir),
     dts({
       rollupTypes: true,
       entryRoot: './src',
@@ -41,6 +39,7 @@ export default defineConfig({
   },
   build: {
     cssCodeSplit: true,
+    outDir,
     lib: {
       entry: [
         ...getFilesWithExtension(

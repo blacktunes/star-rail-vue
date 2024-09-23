@@ -1,12 +1,10 @@
 {
   "extends": "@tsconfig/node18/tsconfig.json",
   "include": [
-    "./plugin/*"
+    "./plugin/**/*"
   ],
   "compilerOptions": {
-    "outDir": "./dist/vite",
-    "declaration": true,
-    "composite": false,
+    "composite": true,
     "module": "ESNext",
     "moduleResolution": "Bundler",
     "types": [
