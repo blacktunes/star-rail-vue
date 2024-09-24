@@ -37,6 +37,7 @@ const btnSize = computed(() => `${props.size}px`)
 
 <style lang="stylus" scoped>
 .menu-btn
+  position relative
   display flex
   justify-content center
   align-items center
