@@ -20,5 +20,6 @@ export * from './utils/localStorage'
 export * from './utils/log'
 export * from './utils/popup'
 export * from './utils/screenshot'
+export * from './utils/data'
 
 export default {}
