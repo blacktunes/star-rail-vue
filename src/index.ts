@@ -17,6 +17,7 @@ export * from './utils/file'
 export * from './utils/images'
 export * from './utils/indexedDB'
 export * from './utils/localStorage'
+export * from './utils/log'
 export * from './utils/popup'
 export * from './utils/screenshot'
 
