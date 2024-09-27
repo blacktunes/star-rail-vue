@@ -13,6 +13,7 @@ export * from './components/popup/Log'
 export * from './components/popup/Select'
 
 export * from './utils/analytics'
+export * from './utils/file'
 export * from './utils/images'
 export * from './utils/indexedDB'
 export * from './utils/localStorage'
