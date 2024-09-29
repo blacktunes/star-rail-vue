@@ -10,6 +10,7 @@ export * from './components/popup/Cropper'
 export * from './components/popup/Input'
 export * from './components/popup/Loading'
 export * from './components/popup/Log'
+export * from './components/popup/Log/types'
 export * from './components/popup/Select'
 
 export * from './utils/analytics'

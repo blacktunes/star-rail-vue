@@ -1,4 +1,4 @@
-interface LogData {
+export interface LogData {
   time: string
   text: {
     text: string
