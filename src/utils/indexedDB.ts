@@ -24,6 +24,7 @@ export class IndexedDB {
     {
       data: Record<string, any>
       key: string
+      initial?: any
       cb?: () => void
     }
   > = {}
@@ -69,6 +70,7 @@ export class IndexedDB {
   add = <T extends { [name: string]: any }, K extends keyof T & string>(data: {
     data: T
     key: K
+    initial?: T[K]
     name?: string
     cb?: () => void
   }) => {
@@ -87,6 +89,7 @@ export class IndexedDB {
         this.DBList[data.name] = {
           data: data.data,
           key: data.key,
+          initial: data.initial,
           cb: data.cb
         }
       }
@@ -94,6 +97,7 @@ export class IndexedDB {
       this.DBList[this.index++] = {
         data: data.data,
         key: data.key,
+        initial: data.initial,
         cb: data.cb
       }
     }
@@ -125,6 +129,11 @@ export class IndexedDB {
             for (const key in this.DBList) {
               this.updateDB(key)
               this.setWatch(key)
+            }
+            for (const key in this.DBList) {
+              if (this.DBList[key].initial) {
+                this.DBList[key].data[this.DBList[key].key] = this.DBList[key].initial
+              }
             }
           }
         }
