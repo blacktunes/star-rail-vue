@@ -3,7 +3,7 @@ import type { Reactive } from 'vue'
 export const setLocalStorage = <T extends Reactive<Object>>(
   data: T,
   name: string,
-  watcher = true
+  is_watch = true
 ) => {
   try {
     const _setting = JSON.parse(localStorage.getItem(name) || '{}')
@@ -19,10 +19,28 @@ export const setLocalStorage = <T extends Reactive<Object>>(
       }
     }
   } finally {
-    if (watcher) {
+    if (is_watch) {
       watch(data, () => {
         localStorage.setItem(name, JSON.stringify(toRaw(data)))
       })
     }
   }
+}
+
+export const timeComparison = (key: string, time?: string | number) => {
+  return new Promise<void>((resolve) => {
+    if (!time) return
+    const lastTime = new Date(time).getTime()
+    const localLastTime = localStorage.getItem(key)
+    if (localLastTime === null) {
+      localStorage.setItem(key, JSON.stringify(lastTime))
+      return
+    }
+    if (lastTime) {
+      if (lastTime > Number(localLastTime)) {
+        resolve()
+        localStorage.setItem(key, JSON.stringify(lastTime))
+      }
+    }
+  })
 }

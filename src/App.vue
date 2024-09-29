@@ -7,23 +7,26 @@
     :popup="popupManager"
     @click="click"
   >
-    <div class="test">
-      测试文本测试文本测试文本测试文本测试文本测试文本测试文本测试文本测试文本测试文本测试文本测试文本测试文本测试文本测试文本测试文本测试文本测试文本测试文本测试文本
-    </div>
+    <img
+      v-if="image"
+      :src="image"
+      alt=""
+    />
   </Main>
 </template>
 
 <script lang="ts" setup>
-import { createPopupManager, Main, confirm } from '.'
+import { createPopupManager, Main, cropper } from '.'
+
+const image = ref('')
 
 const popupManager = createPopupManager({
-  confirm
+  cropper
 })
 
 const click = () => {
-  popupManager.open('confirm', {
-    title: '测试',
-    text: ['测试文本']
+  popupManager.open('cropper', { aspectRatio: 0.7, maxWidth: 1280 }).then((res) => {
+    image.value = res.base64
   })
 }
 </script>

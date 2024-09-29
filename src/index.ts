@@ -14,13 +14,12 @@ export * from './components/popup/Log/types'
 export * from './components/popup/Select'
 
 export * from './utils/analytics'
+export * from './utils/data'
 export * from './utils/file'
 export * from './utils/images'
 export * from './utils/indexedDB'
 export * from './utils/localStorage'
-export * from './utils/log'
 export * from './utils/popup'
 export * from './utils/screenshot'
-export * from './utils/data'
 
 export default {}
