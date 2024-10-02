@@ -46,13 +46,14 @@ export class IndexedDB {
     this.doneCheck(key)
     this.DBList[key]?.cb?.()
     watch(
-      this.DBList[key].data[this.DBList[key].key],
+      () => this.DBList[key].data[this.DBList[key].key],
       () => {
         nextTick(() => {
           this.updateDB(key)
         })
       },
       {
+        deep: true,
         immediate: true
       }
     )
