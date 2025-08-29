@@ -11,11 +11,11 @@ export const data = reactive<{
   img: ''
 })
 
-const cropperOpen = (img: string, aspectRatio?: number) => {
+const cropperOpen = (img: string, aspectRatio?: number, maxWidth?: number) => {
   return new Promise<string>((resolve) => {
     data.img = img
     data.aspectRatio = aspectRatio
-    data.fn = (str) => resolve(str)
+    data.fn = (str) => resolve(imageCompress(str, maxWidth))
   })
 }
 
@@ -30,8 +30,9 @@ export const callback = {
         if (el.files?.[0]) {
           resolve({
             base64: await cropperOpen(
-              await imageCompress(el.files[0], config?.maxWidth),
-              config?.aspectRatio
+              URL.createObjectURL(el.files[0]),
+              config?.aspectRatio,
+              config?.maxWidth
             ),
             raw: el.files[0]
           })
@@ -41,6 +42,7 @@ export const callback = {
     })
   },
   close: () => {
+    URL.revokeObjectURL(data.img)
     data.img = ''
     data.aspectRatio = undefined
     data.fn = undefined
@@ -50,6 +52,7 @@ export const callback = {
   },
   get confirm() {
     return () => {
+      URL.revokeObjectURL(data.img)
       confirm()
     }
   }
